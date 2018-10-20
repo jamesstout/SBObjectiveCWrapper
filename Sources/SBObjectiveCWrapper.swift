@@ -68,7 +68,7 @@ extension SwiftyBeaver: Loggable {}
             let endIndex = function.index(before: match.upperBound)
             let functionParts = function[match.lowerBound..<endIndex].components(separatedBy: ":")
 
-            guard functionParts.isEmpty == true else { return function }
+            guard functionParts.isEmpty == false else { return function }
 
             for (index, part) in functionParts.enumerated() {
                 switch index {
