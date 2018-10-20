@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.license      = "MIT"
     s.author       = { "Reese McLean" => "reese.mclean@me.com" }
     s.ios.deployment_target = "9.0"
-    s.watchos.deployment_target = "2.0"
+    s.watchos.deployment_target = "3.0"
     s.tvos.deployment_target = "9.0"
     s.osx.deployment_target = "10.11"
     s.source       = { :git => "https://github.com/SwiftyBeaver/SBObjectiveCWrapper.git", :tag => s.version.to_s }
