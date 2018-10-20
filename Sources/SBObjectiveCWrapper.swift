@@ -10,13 +10,13 @@ import Foundation
 import SwiftyBeaver
 
 protocol Loggable: class {
-    
+
     static func verbose(_ msg: @autoclosure () -> Any, _ path: String, _ function: String, line: Int, context: Any?)
     static func debug(_ msg: @autoclosure () -> Any, _ path: String, _ function: String, line: Int, context: Any?)
     static func info(_ msg: @autoclosure () -> Any, _ path: String, _ function: String, line: Int, context: Any?)
     static func warning(_ msg: @autoclosure () -> Any, _ path: String, _ function: String, line: Int, context: Any?)
     static func error(_ msg: @autoclosure () -> Any, _ path: String, _ function: String, line: Int, context: Any?)
-    
+
 }
 
 extension SwiftyBeaver: Loggable {}
@@ -24,7 +24,9 @@ extension SwiftyBeaver: Loggable {}
 @objc open class SBObjectiveCWrapper: NSObject {
     
     @objc class func _setLogClassForTesting(_ logClass: AnyObject) {
-        self.logClass = logClass as! Loggable.Type
+        if let logC = logClass as? Loggable.Type {
+            self.logClass = logC
+        }
     }
     
     static var logClass: Loggable.Type = SwiftyBeaver.self
@@ -66,8 +68,8 @@ extension SwiftyBeaver: Loggable {}
             let endIndex = function.index(before: match.upperBound)
             let functionParts = function[match.lowerBound..<endIndex].components(separatedBy: ":")
 
-            guard functionParts.count > 0 else { return function }
-            
+            guard functionParts.isEmpty == true else { return function }
+
             for (index, part) in functionParts.enumerated() {
                 switch index {
                 case 0:
@@ -79,8 +81,7 @@ extension SwiftyBeaver: Loggable {}
                     }
                 }
             }
-            if functionParts.count > 1 { strippedFunction += ")" }
-            else if functionParts.count == 1 { strippedFunction += "()" }
+            if functionParts.count > 1 { strippedFunction += ")" } else if functionParts.count == 1 { strippedFunction += "()" }
             
         }
         return strippedFunction
