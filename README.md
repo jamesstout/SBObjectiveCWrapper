@@ -1,13 +1,13 @@
 # SBObjectiveCWrapper
 
-![Platform iOS 8+](https://img.shields.io/badge/Platform-iOS%208%2B-blue.svg)
+![Platform iOS 8+](https://img.shields.io/badge/Platform-iOS%209%2B-blue.svg)
 ![Platform Mac OS X 10.9+](https://img.shields.io/badge/Platform-Mac%20OS%20X%2010.9%2B-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-tvOS%209%2B-blue.svg)
-![Platform](https://img.shields.io/badge/Platform-watchOS%202%2B-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-watchOS%203%2B-blue.svg)
 <br/>
 [![Language Swift 2.3](https://img.shields.io/badge/Language-Swift%202-orange.svg)](https://developer.apple.com/swift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
-[![Cocoapods compatible](https://img.shields.io/cocoapods/v/SBObjectiveCWrapper.svg)]("https://cocoapods.org)
+[![Cocoapods compatible](https://img.shields.io/badge/pod-v1.6.1-blue.svg)]("https://github.com/jamesstout/SBObjectiveCWrapper)
 
 SBObjectiveCWrapper enables you to use [SwiftyBeaver](https://github.com/SwiftyBeaver/SwiftyBeaver) logging in your Objective-C code.
 
@@ -20,7 +20,7 @@ SBObjectiveCWrapper enables you to use [SwiftyBeaver](https://github.com/SwiftyB
 
 #### Platform & Installation Support
 
-\ | iOS 9+ | OSX 10.9+ | watchOS 2+ | tvOS 9+
+\ | iOS 9+ | OSX 10.9+ | watchOS 3+ | tvOS 9+
 ------------- | ------------- | ------------- | ------------- | -------------
 [Carthage](https://github.com/Carthage/Carthage) | <center>✅</center> | <center>✅</center> | <center>✅</center> | <center>✅</center>
 [CocoaPods](https://cocoapods.org) | <center>✅</center> | <center>✅</center> | <center>✅</center> | <center>✅</center>
@@ -34,7 +34,7 @@ You can use [Carthage](https://github.com/Carthage/Carthage) to install SBObject
 
 #### Swift 3.0
 ```
-github "SwiftyBeaver/SBObjectiveCWrapper"
+github "jamesstout/SBObjectiveCWrapper"
 ```
 
 #### Swift 2.3
@@ -52,7 +52,7 @@ To use [CocoaPods](https://cocoapods.org) just add this to your Podfile:
 #### Swift 3.0
 
 ```
-pod 'SBObjectiveCWrapper', '~> 1.1.0'
+pod 'SBObjectiveCWrapper', :git => 'https://github.com/jamesstout/SBObjectiveCWrapper.git', :tag => '1.6.1'
 ```
 
 #### Swift 2.3
